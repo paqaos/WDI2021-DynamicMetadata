@@ -1,0 +1,22 @@
+{
+  "metadataDefinitionId": "actor",
+  "dynamicProperties": [
+    {
+      "id": "person",
+      "type": "person",
+      "value": {
+          "id": "someone"
+      }
+    },
+    {
+      "id": "character",
+      "type": "string",
+      "value": "Anonymous"
+    },
+    {
+        "id": "main-character",
+        "type": "boolean",
+        "value": True
+    }
+  ]
+}
