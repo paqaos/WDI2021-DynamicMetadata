@@ -31,6 +31,7 @@ namespace MovieDatabase.CommandStack.CommandHandlers.MetadataDefinitions
             _eventDispatcher = eventDispatcher;
             _validationFactory = validationFactory;
         }
+
         /// <inheritdoc />
         public async Task<MetadataDefinitionDto> HandleResult(RemoveMovieMetadataCommand command, CancellationToken token)
         {
@@ -54,7 +55,6 @@ namespace MovieDatabase.CommandStack.CommandHandlers.MetadataDefinitions
                 throw new BadRequestException("Property is used by validator")
                 {
                     ErrorCode = 11,
-
                 };
             }
 

@@ -35,12 +35,8 @@ namespace MovieDatabase
         {
             container.Options.ResolveUnregisteredConcreteTypes = false;
 
-            services.AddControllers();
-            services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "MovieDatabase", Version = "v1" });
-            });
-
+            services.AddControllers(); 
+            
             services.AddSimpleInjector(container, options =>
             {
                 options.AddAspNetCore()
@@ -54,6 +50,12 @@ namespace MovieDatabase
             });
 
             SimpleInjectorInitialize.AddServices(container);
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "MovieDatabase", Version = "v1" });
+            });
+
+       
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
